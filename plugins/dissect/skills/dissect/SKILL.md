@@ -17,6 +17,14 @@ Turn a reference video into a blueprint that a person or an AI can follow to mak
 
 Rebuilds from v2 blueprints score far closer to the original than from v1 (62 → 82 out of 100 on the same brief), and the builders said the frames mattered most: one frame per shot and the transition strips. So look at the sheets, and ship them with the blueprint.
 
+## Text-only agents
+
+If you can't view images (a text-only model, or a background job that builds a video rather than writing a report):
+
+- Skip Step 3. Never open `sheets/*.jpg`. The source of truth is `facts.md`, `measured.md` and `data/timeline.json`: every cut, transition, type box, camera move, palette, cue and word timing is there as numbers. Where the text says a reading is uncertain, say so; don't guess what the frames show.
+- Building a new video from the reference: do Steps 1, 2 and 4, then go straight to the build using the numbers. Skip the Step 5 blueprint and `assemble`. Use Step 6 (`check`) on your render.
+- On Linux without tesseract, on-screen text isn't read. Type sizes and positions then come only from the `measured.md` type block when present; otherwise choose them from the field guide.
+
 ## Input
 
 One or more links or file paths, optionally with `quick` or `deep` (as `/dissect`, they arrive as `$ARGUMENTS`). No link: ask for one.
