@@ -24,6 +24,7 @@ If you can't view images (a text-only model, or a background job that builds a v
 - Skip Step 3. Never open `sheets/*.jpg`. The source of truth is `facts.md`, `measured.md` and `data/timeline.json`: every cut, transition, type box, camera move, palette, cue and word timing is there as numbers. Where the text says a reading is uncertain, say so; don't guess what the frames show.
 - Building a new video from the reference: do Steps 1, 2 and 4, then go straight to the build using the numbers. Skip the Step 5 blueprint and `assemble`. Use Step 6 (`check`) on your render.
 - If the host gives you a download tool, fetch the video with it and pass `dissect.py` the local file; use its own yt-dlp download only as a last resort.
+- If the host offers a video-understanding tool, run it once on the (normalized mp4) video instead of reading the sheets, and save its notes next to the dissection. Timing comes from the numbers; look, type treatment and motion style from those notes.
 - On Linux without tesseract, on-screen text isn't read. Type sizes and positions then come only from the `measured.md` type block when present; otherwise choose them from the field guide.
 
 ## Input
